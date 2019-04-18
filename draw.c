@@ -125,27 +125,27 @@ void draw_polygons( struct matrix *polygons, screen s, zbuffer zb, color c ) {
 
     if ( normal[2] > 0 ) {
 
-      draw_line( polygons->m[0][point],
-                 polygons->m[1][point],
-                 polygons->m[2][point],
-                 polygons->m[0][point+1],
-                 polygons->m[1][point+1],
-                 polygons->m[2][point+1],
-                 s, zb, c);
-      draw_line( polygons->m[0][point+2],
-                 polygons->m[1][point+2],
-                 polygons->m[2][point+2],
-                 polygons->m[0][point+1],
-                 polygons->m[1][point+1],
-                 polygons->m[2][point+1],
-                 s, zb, c);
-      draw_line( polygons->m[0][point],
-                 polygons->m[1][point],
-                 polygons->m[2][point],
-                 polygons->m[0][point+2],
-                 polygons->m[1][point+2],
-                 polygons->m[2][point+2],
-                 s, zb, c);
+//       draw_line( polygons->m[0][point],
+//                  polygons->m[1][point],
+//                  polygons->m[2][point],
+//                  polygons->m[0][point+1],
+//                  polygons->m[1][point+1],
+//                  polygons->m[2][point+1],
+//                  s, zb, c);
+//       draw_line( polygons->m[0][point+2],
+//                  polygons->m[1][point+2],
+//                  polygons->m[2][point+2],
+//                  polygons->m[0][point+1],
+//                  polygons->m[1][point+1],
+//                  polygons->m[2][point+1],
+//                  s, zb, c);
+//       draw_line( polygons->m[0][point],
+//                  polygons->m[1][point],
+//                  polygons->m[2][point],
+//                  polygons->m[0][point+2],
+//                  polygons->m[1][point+2],
+//                  polygons->m[2][point+2],
+//                  s, zb, c);
       scanline_convert(polygons, point, s, zb);
     }
   }
@@ -673,5 +673,5 @@ void draw_line(int x0, int y0, double z0,
     }
     loop_start++;
   } //end drawing loop
-  plot( s, zb, c, x1, y1, 0);
+  plot( s, zb, c, x1, y1, z1);
 } //end draw_line
